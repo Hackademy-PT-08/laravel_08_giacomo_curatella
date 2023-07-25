@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Ubuntu&display=swap');
+
+.myButton {
+    background-color: #5B62F4;
+    color: white;
+}
+
+.special-text {
+    font-family: 'Grape Nuts', cursive;
+    font-weight: 400;
+}
+
+p, a {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
