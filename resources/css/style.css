@@ -14,3 +14,10 @@ p, a {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
 }
+
+.cardImg{
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
