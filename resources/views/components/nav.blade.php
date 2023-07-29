@@ -9,9 +9,26 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
           </li>
+          
+          @if(!auth()->check())
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Sign-in</a>
+          </li>
+          @else
           <li class="nav-item">
             <a class="nav-link" href="{{ route('create') }}">Pubblica Post</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('profile')}}">Il mio Profilo</a>
+          </li>
+          <form action="/logout" method="POST">
+            @csrf
+            <button type="submit" class=" p-1" style="background-color: red; color:white">Esci</button>
+          </form>
+          @endif
         </ul>
       </div>
     </div>

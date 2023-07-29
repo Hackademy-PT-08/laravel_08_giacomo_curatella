@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PrivateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'index'])->name('home');
+
+
+
+
+
 Route::get('/articoli/crea-post', [ArticleController::class, 'index'])->name('create');
+
 Route::post('/articoli/crea-post', [ArticleController::class, 'store'])->name('store');
+
+Route::get('/profile', [PublicController::class, 'profile'])->name('profile')->middleware(['auth', 'verified']);
+

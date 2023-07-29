@@ -11,7 +11,10 @@ class ArticleController extends Controller
 {
     //!crea post
     public function index() {
-        return view('articoli.create');
+        if(auth()->check()){
+            return view('articoli.create');
+        }
+        return view('errors.redirect-error');
     }
     //!store articles
     public function store(ImageRequest $request){
